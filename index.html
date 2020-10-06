@@ -1,143 +1,169 @@
+
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Smoothies</title>
+        <link rel="stylesheet" href="simplesmoothies.css">
+    </head>
 
-<head>
-    <title>Smoothie recipes</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
 
-<body>
-
-    <div class="container">
-        <div class="slideshow">
-            <img src="./Slideshow/image.png" />
-            <img src="./Slideshow/image2.png" />
-            <img src="./Slideshow/image3.png" />
-            <img src="./Slideshow/image4.png" />
-            <img src="./Slideshow/image5.png" />
-            <img src="./Slideshow/image6.png" />
+    <body>
+        <div id = "banner">
+            <img id ="banner" src="images/smoothielogo.png" alt="websitename">
         </div>
-        <h1>Smoothies</h1>
-        <div class="recipes">
 
-            <div class="recipe">
-                <h2>Classic Green Smoothie</h2>
-                <img src="./images/greensmoothie.png" />
-                <div class="Ingredients">
-                    <h6>Ingredients</h6>
+        <div class="crossfade" >
+            <img  src="images/img1.png"  >
+            <img  src="images/img2.png" >
+            <img  src="images/img3.png" >
+            <img  src="images/img4.png" >
+            <img  src="images/img5.png" >
+            <img   src="images/img6.png">
+            <img  src="images/img7.png">
+            
+
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+                
+                <img  src="images/greensmoothie.png"  >
+                <div class="dropdown-content">
+                      <!-- <img class="blenderanimation">  src="file:///Users/ilkajean/Desktop/Project 1/Slideshow images/blenderanimation.jpeg" </img> -->
+                    <h2>Classic Green Smoothie</h2>
+                    <div class ="blendani">
+                    <img class ="blendani" src="images/blenderanimation.jpeg" alt="no">
+                    </div>
+                    <h4>Ingredients:</h4>
                     <ul>
-                        <li>1 frozen banana</li>
-                        <li>1 cup greens (baby spinach, destemmed kale, collards, chard, etc</li>
-                        <li>1 cup unsweetened milk (nut, soy, animal)</li>
-                        <li>Honey or maple syrup, to taste</li>
+                        <ol> 1 frozen banana</ol>
+                        <ol> 1 cup greens (baby spinach, destemmed kale, collards, chard, etc.)</ol>
+                        <ol>1 cup unsweetened milk (nut, soy, animal)</ol>
+                        <ol>Honey or maple syrup, to taste</ol>
                     </ul>
-                    <h6>Instructions</h6>
-                    <p>
-                        Blend. Add all ingredients to a blender and pulse until smooth. If the mixture seems too thick, add in extra milk. If it seems too thin, add in extra greens or banana.
-                    </p>
-                </div>
-            </div>
-            <div class="recipe">
-                <h2>Strawberry Banana Smoothie </h2>
-                <img src="./images/stawberryban.png" />
-                <div class="Ingredients">
-                    <h6>Ingredients</h6>
-                    <ul>
-                        <li>2 cups frozen strawberries </li>
-                        <li>1 fresh banana, peeled</li>
-                        <li>1 cup milk (I used almond milk)</li>
-                        <li>1 cup ice</li>
-                    </ul>
-                    <h6>Instructions</h6>
-                    <p>
-                        Blend. Add all ingredients to a blender and pulse until smooth. If the mixture seems too thick, add in extra milk (or water). If it seems too thin, add in extra strawberries or banana.
-                    </p>
-                </div>
-            </div>
-            <div class="recipe">
-                <h2>Tropical Blend Smoothie</h2>
-                <img src="./images/tropicalsmoothie.png" />
-                <div class="Ingredients">
-                    <h6>Ingredients</h6>
-                    <ul>
-                        <li>3/4 cup pineapple juice</li>
-                        <li>1/2 cup canned of desired milk </li>
-                        <li>1 large banana sliced </li>
-                        <li>1 cup frozen mango </li>
-                        <li>1 cup frozen pineapple </li>
-                        <li>Optional garnishes: Maraschino cherries, lime slices, mint sprigs, pineapple wedges </li>
-
-                    </ul>
-                    <h6>Instructions</h6>
-                    <p>
-                        Place the pineapple juice, milk, banana, mango and pineapple in a blender; blend until completely smooth.
-                    </p>
-                </div>
-            </div>
-            <div class="recipe">
-                <h2>Chocolate Peanut Butter Smoothie </h2>
-                <img src="./images/chocpeanut.png" />
-                <div class="Ingredients">
-                    <h6>Ingredients</h6>
-
-                    <ul>
-                        <li>1 frozen banana</li>
-                        <li>1 cup unsweetened milk (nut, soy, animal) </li>
-                        <li>1 tablespoon natural peanut butter </li>
-                        <li>1–3 teaspoons unsweetened cocoa powder </li>
-                        <li>Honey or maple syrup, to taste </li>
-
-                    </ul>
-                    <h6>Instructions</h6>
-                    <p>
-                        Blend. Add all ingredients to a blender and pulse until smooth. If the mixture seems too thick, add in extra milk. If it seems too thin, add in extra banana or peanut butter.
-
-                    </p>
-                </div>
-            </div>
-            <div class="recipe">
-                <h2>Strawberry Oatmeal Smoothie </h2>
-                <img src="./images/stawberryban.png" />
-                <div class="Ingredients">
-                    <h6>Ingredients</h6>
-
-                    <ul>
-                        <li>1 cup of desired milk </li>
-                        <li>½ cup rolled oats </li>
-                        <li>1 banana, broken into chunks </li>
-                        <li>14 berry (blank)s frozen strawberries </li>
-                        <li>½ teaspoon vanilla extract </li>
-                        <li>1 ½ teaspoons white sugar</li>
-                    </ul>
-                    <h6>Instructions</h6>
-                    <p>
-                        Blend. Add all ingredients to a blender and pulse until smooth. If the mixture seems too thick, add in extra milk. If it seems too thin, add in extra banana or strawberries or more oats.
-                    </p>
-                </div>
-            </div>
-            <div class="recipe">
-                <h2>Kiwi Banana Smoothie </h2>
-                <img src="./images/kiwiban.png" />
-                <div class="Ingredients">
-                    <h6>Ingredients</h6>
-
-                    <ul>
-                        <li>2 kiwis </li>
-                        <li>1 banana </li>
-                        <li>1/4 cup of desired milk </li>
-                        <li>1/2 tablespoon honey </li>
-                    </ul>
-                    <h6>Instructions</h6>
-                    <p>
-                        Blend. Add all ingredients to a blender and pulse until smooth. If the mixture seems too thick, add in extra milk. If it seems too thin, add in extra banana or kiwi. For more sweet taste add in 1 extra tablespoon of honey.
-
-                    </p>
-                </div>
+                    <h4>Instructions:</h4>
+                    <p>Blend.  Add all ingredients to a blender and pulse until smooth.  If the mixture seems too thick, add in extra milk.  If it seems too thin, add in extra greens or banana.</p>
+                    </div>
             </div>
 
-        </div>
-    </div>
+            <div class="grid-item">
+                
+                <img  src="images/stawberryban.png"  >
+                <div class="dropdown-content">
+                    <div> </div>
+                    <h2>Strawberry Banana Smoothie</h2>
+                    <div class ="blendani">
+                        <img class ="blendani" src="images/blenderanimation.jpeg" alt="no">
+                        </div>
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <ol> 2 cups frozen strawberries</ol>
+                        <ol> 1 fresh banana, peeled</ol>
+                        <ol>1 cup milk (I used almond milk)</ol>
+                        <ol>1 cup ice</ol>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p>Blend.  Add all ingredients to a blender and pulse until smooth.  If the mixture seems too thick, add in extra milk (or water).  If it seems too thin, add in extra strawberries or banana.</p>
+                   
+                    </div>
+            </div>
 
-</body>
+            <div class="grid-item">
+               
+                <img  src="images/tropicalsmoothie.png"  >
+                <div class="dropdown-content">
+                    <div> </div>
+                    <h2>Tropical Blend Smoothie</h2>
+                    <div class ="blendani">
+                        <img class ="blendani" src="images/blenderanimation.jpeg" alt="no">
+                        </div>
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <ol> 3/4 cup pineapple juice</ol>
+                        <ol> 1/2 cup canned of desired milk</ol>
+                        <ol>1 large banana sliced</ol>
+                        <ol>1 cup frozen mango</ol>
+                        <ol>1 cup frozen pineapple</ol>
+                        <ol>Optional garnishes: Maraschino cherries, lime slices, mint sprigs, pineapple wedges</ol>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p> Place the pineapple juice, milk, banana, mango and pineapple in a blender; blend until completely smooth.</p>
+                
+                    </div>
+            </div> 
 
+            <div class="grid-item">
+                <img  src="images/chocpeanut.png"  >
+                <div class="dropdown-content">
+                    <div> </div>
+                    <h2>Chocolate Peanut Butter Smoothie</h2>
+                    <div class ="blendani">
+                        <img class ="blendani" src="images/blenderanimation.jpeg" alt="no">
+                        </div>
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <ol> 1 frozen banana</ol>
+                        <ol> 1 cup unsweetened milk (nut, soy, animal) </ol>
+                        <ol>1 tablespoon natural peanut butter</ol>
+                        <ol>1 tablespoon natural peanut butter</ol>
+                        <ol>1–3 teaspoons unsweetened cocoa powder</ol>
+                       
+                        <ol>Honey or maple syrup, to taste</ol>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p>Blend.  Add all ingredients to a blender and pulse until smooth.  If the mixture seems too thick, add in extra milk.  If it seems too thin, add in extra b</p>
+                    </p>
+                    </div>
+            </div>
+
+            <div class="grid-item">
+                <!-- <h6>Strawberry Oatmeal Smoothie</h6> -->
+                <img  src="images/stawboatmeal.png"  >
+                <div class="dropdown-content">
+                    <div> </div>
+                    <h2>Strawberry Oatmeal Smoothie</h2>
+                    <div class ="blendani">
+                        <img class ="blendani" src="images/blenderanimation.jpeg" alt="no">
+                        </div>
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <ol> 1 cup of desired milk</ol>
+                        <ol> 1/2 cup rolled oats</ol>
+                        <ol>1 banana, broken into chunks</ol>
+                        <ol>14 berry (blank)s frozen strawberries</ol>
+                        <ol>1/2 teaspoon vanilla extract</ol>
+                        <ol>1 1/2 teaspoons white sugar</ol>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p>Blend. Add all ingredients to a blender and pulse until smooth.  If the mixture seems too thick, add in extra milk.  If it seems too thin, add in extra banana or strawberries or more oats.</p>
+          
+                    </div>
+            </div>
+
+            <div class="grid-item">
+                <!-- <h6>Kiwi Banana Smoothie/h6> -->
+                <img  src="images/kiwiban.png"  >
+                
+                <div class="dropdown-content">
+                    <div> </div>
+                    <h2>Kiwi Banana Smoothie</h2>
+                    <div class ="blendani">
+                        <img class ="blendani" src="images/blenderanimation.jpeg" alt="no">
+                        </div>
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <ol> 2 kiwis </ol>
+                        <ol> 1 banana</ol>
+                        <ol>1/4 cup of desired milk</ol>
+                        <ol>1/2 tablespoon honey</ol>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <p>Blend.  Add all ingredients to a blender and pulse until smooth.  If the mixture seems too thick, add in extra milk.  If it seems too thin, add in extra banana or kiwi. For more sweet taste add in 1 extra tablespoon of honey.</p>
+                   
+                    </div>
+            </div> 
+
+          </div>
+    </body>
 </html>
