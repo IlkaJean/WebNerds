@@ -1,0 +1,94 @@
+
+  #loginform{
+      margin-top:30px;
+  }
+  #byte, h3{
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      
+  }
+  #byte{
+      font-size: 50pt;
+  }
+  /*end of nav bar*/
+  body{
+    margin:0;
+    background-image: linear-gradient(135deg, black 60%, cyan);
+    color:white;
+  }
+  
+  label{
+      margin:auto;
+  }
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    /* margin: 5px 0 22px 0; */
+    display: block;
+    /* display: inline-block; */
+    border: none;
+    background: #f1f1f1;
+    box-sizing: border-box;
+  
+  }
+  
+  /* Add a background color when the inputs get focus */
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-image: linear-gradient(135deg, black 20%, cyan);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }
+  
+ 
+  /* The Modal (background) */
+  .container {
+     
+    padding: 16px;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    max-width: 500px; /* Full width */
+    /* max-height: 700px; Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /* background-color: #474e5d; */
+    margin: auto;
+    
+    background-image: linear-gradient(135deg, black 50%, cyan );
+  }
+  
+
+  
+ 
+  
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+   
+
+  
