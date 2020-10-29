@@ -1,0 +1,102 @@
+1. Which runs on a computer hardware adn serve as platform for other software to run on?
+A) Application Software
+B) System Software   	
+C) Operating System    	 <Correct>
+
+
+
+2. What is the duty of multiprogramming systems?
+A) Execute each job faster.
+B) Execute more jobs in the same time period.  		 <Correct>
+C) Are easier to develop than single programming systems.
+
+ 
+
+3. The parent class in an inheritance relationship is called wha?
+A) Subclass 
+B) Constructor
+C) Superclass 			<Correct>
+
+4. What is encapsulation?
+A) Objects protecting their internal data from unwanted external modification by
+declaring them to be private. 			<Correct>
+B) A method to implement a new version of the method to replace code that would otherwise
+habe been inherited from superclass.
+C) Helps in implementing multiple inheritance.
+
+
+5. What indices of the following array will be examined by a sequencial search if the 
+target is 9? [3,0,4,12,8,9,18,21,81,7]
+A)5,2,3,4
+B)0,1,2,3,4,5				<Correct>
+C)0,1,2,3,4,5,6,7,8,9
+
+
+
+6. Which sorting algorithm  works by repeatedly swapping the adjacent elements if they are in wrong order?
+A)Merge Sort
+B)Bubble Sort		<Correct>
+C)Insertion Sort
+
+
+7. What is the runtime complexity for insertion and lookup in a hashmap?
+A) O(n)
+B) O(logn)
+C) O(1) 			<Correct>
+
+
+
+8. In a Max-Heap the key present at the root node must be minimum among the keys present at all of it’s children?
+A) True 
+B) False			<Correct>
+C) Can be both, depending on the tree.
+
+
+
+9.What is the best case runtime complexity of Quick and Merge sort?
+A)O(n)
+B)O(n^2)
+C)O(nlog(n)) 		<Correct>
+
+
+
+10. What does HTML stands for?
+A) Hyper Time Make Love
+B) Hypertext Markup Language 		<Correct>
+C) Hypertext Markup Logistics
+
+ 
+11. Which of these algorithms are considered stable algorithms?
+A)Counnt Sort
+B) Merge Sort
+C) All of the Above. 		<Correct>
+
+
+12. Which Algorithm is considered unstable?
+A)Insertion Sort
+B)Merge Sort
+C)Heap Sort 		<Correct>
+
+
+13. Which number system is used in a digital computer?
+A) Binary		<Correct>
+B) Hexadecimal
+C) Decimal
+
+
+14. Who is considered the first computer programmer?
+A) Ada Lovelace		<Correct>
+B) Edsger W. Dijkstra
+C) Bill Gates
+
+
+15. What is a left arithmetic shift?
+A) A Left Arithmetic Shift of one position moves each bit to the left by one.  <Correct>
+B)A Left Arithmetic Shift of one position moves each bit to the left by two.
+C)A Left Arithmetic Shift of one position moves each bit to the right by one .
+
+
+16. What is a greedy algorithm?
+A)Any algorithm that has the best runtime complexity
+B)Any algorithm that follows the problem-solving heuristic of making the locally optimal choice at each stage. 		<Correct>
+C)Any algorithm that can be written with less than 50 lines of code.
