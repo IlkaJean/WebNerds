@@ -1,49 +1,138 @@
-<?php
+<!DOCTYPE>
 
-$file1 = "visitors.txt";
-$current_content1 = file_get_contents($file1);
-
-?>
-<pre>
-<!-- connect this to  login.html-->
-header(Location:  )
-</pre>
-<?php
-$current_content1 .= $_POST["name"] . "," . $_POST["username"] . "," .
-  $_POST["psw"]  . "," . $_POST["cpsw"] . "\n";
-file_put_contents($file1, $current_content1);
-?>
-<?php
-// $visitors = file("visitors.txt");
-// /* Find and get user */
-// $user_info_line = '';
-// for ($i = 0; $i < count($visitors); $i++) {
-//   $user_info_line = strstr($visitors[$i], $_POST["name"]);
-//   if ($user_info_line !== FALSE) {
-//     break;
-//   }
-// }
-
-// $user_info = explode(",", $user_info_line);
-// $username = $user_info[1];
-// $password = $user_info[2];
-?>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  <title>ByteTyme</title>
+
+  <link href="signin-signup.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- <a href="signup.html">Sign up</a> -->
-  <a href="signup.html" onclick="signup()"> Sign In</a>
+  <?php
+  $array = array("name", "username", "psw", "cpsw");
+  $errorMessage = array();
+
+  /* Confirm that values are present before accessing them. */
+
+  if (isset($_POST['name'])) {
+
+    $array['name'] = ($_POST['name']);
+  }
+
+  if (isset($_POST['username'])) {
+
+    $array['username'] = ($_POST['username']);
+  }
+
+  if (isset($_POST['psw'])) {
+
+    $array['psw'] = ($_POST['psw']);
+  }
+
+  if (isset($_POST['cpsw'])) {
+
+    $array['cpsw'] = ($_POST['cpsw']);
+  }
+
+  if (preg_match("/[0-9]/", $_POST["name"]) === 1) {
+
+    $errorMessage[] = "Name contains other characters. Name must be alphabets only.";
+  }
+
+  // to check that user is not creating second account
+
+  $file = file_get_contents("visitors.txt");
+
+  $line = explode("\n", $file);
+
+  $usern = $_POST["name"];
+
+  foreach ($line as $j) {
+
+    $j = trim($j);
+
+    //echo $j;
+
+    $l = explode(",", $j);
+
+    foreach ($l as $k) {
+
+      $k = trim($k);
+
+      if ((strstr($k, $usern)) == true) {
+        $errorMessage[] = "Name is already in the database.";
+      
+      }
+    }
+   
+  }
+
+  //fclose($file);
+
+  $nameofUser = explode(" ", $array["name"]);
+
+  for ($i = 0; $i < count($nameofUser); $i++) {
+
+    if (strcmp(ucfirst($nameofUser[$i]), $nameofUser[$i]) !== 0) {
+
+      $errorMessage[] = "Make sure that both letters of your name are capitalized.";
+
+      break;
+    }
+  }
+
+  if (($_POST["psw"]) != ($_POST["cpsw"])) {
+
+    $errorMessage[] = "Password Confirmation does not match.";
+  }
+
+  if (strlen($_POST["psw"]) <= 6 && strlen($_POST["cpsw"]) <= 6) {
+
+    $errorMessage[] = "Password too short.";
+  }
+
+  if (empty($errorMessage)) {
+
+    $file = file_get_contents("visitors.txt");
+
+    $file .= $_POST["name"] . "," . $_POST["username"] . "," . $_POST["psw"] . "," . $_POST["cpsw"] . "<br>";
+
+    file_put_contents("visitors.txt", $file, FILE_APPEND | LOCK_EX);
+
+  ?>
+
+    <pre>
+
+        <h3>Welcome, to ByteTyme!<h3><br>
+
+        Hello, <?= $_POST["name"] ?>!
+
+        Now <a href="login.html">log in to earn all the bytes!</a>
+
+    </pre>
+
+  <?php
+
+  } else {
+  ?>
+    <p>
+      <strong>The error(s) you need to fix :) :</strong>
+
+      <?php
+
+      foreach ($errorMessage as $errorMessage) {
+      ?>
+        <p><?= $errorMessage ?> </p>
+
+      <?php } ?>
+
+    </p>
+
+  <?php
+  }
+  ?>
 
 </body>
 
