@@ -2,7 +2,7 @@
 // Starting session
 session_start();
 
-$visitors = file("visitors.txt");
+$visitors = readfile("visitors.txt");
 /* Find and get user */
 $user_info_line = '';
 for ($i = 0; $i < count($visitors); $i++) {
