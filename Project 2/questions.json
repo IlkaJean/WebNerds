@@ -1,0 +1,85 @@
+[
+
+
+    {
+        "id": 0,
+        "question": "Which runs on a computer hardware adn serve as platform for other software to run on ?",
+        "options": ["Application Software", "System Software", "Operating System", "none of the above"],
+        "answer":2
+    },
+    {
+        "id": 1,
+        "question": "What is the duty of multiprogramming systems? ",
+        "options": ["Execute each job faster", "Execute more jobs in the same time period.",
+            "Are easier to develop than single programming systems.", "none of the above"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 2,
+        "question": "The parent class in an inheritance relationship is called wha?",
+        "options": ["Subclass", "Constructor",
+            "Superclass", "none of the above"
+        ],
+        "answer": 2
+    },
+    {
+         "id": 3,
+        "question": "What is encapsulation??",
+        "options": ["Objects protecting their internal data from unwanted external modification by declaring them to be private.",
+         "A method to implement a new version of the method to replace code that would otherwise habe been inherited from superclass.",
+         "Helps in implementing multiple inheritance", "none of the above"
+        ],
+        "answer": 0
+
+    },{
+
+        "id": 4,
+        "question": "What indices of the following array will be examined by a sequencial search if the  target is 9? [3,0,4,12,8,9,18,21,81,7]?",
+        "options": ["5,2,3,4", "0,1,2,3,4,5",
+            "0,1,2,3,4,5,6,7,8,9", "none of the above"
+        ],
+        "answer": 1
+    },{
+         "id": 5,
+        "question": "Which sorting algorithm  works by repeatedly swapping the adjacent elements if they are in wrong order?",
+        "options": ["Merge Sort", "Bubble Sort",
+            "Insertion Sort", "none of the above"
+        ],
+        "answer": 1
+    },{
+
+        "id": 6,
+        "question": "What is the runtime complexity for insertion and lookup in a hashmap?",
+        "options": ["O(n)", "O(logn)",
+            "O(1)", "none of the above"
+        ],
+        "answer": 2
+    },{
+         "id": 7,
+        "question": "In a Max-Heap the key present at the root node must be minimum among the keys present at all of it’s children?",
+        "options": ["True", "False",
+            "Both", "none of the above"
+        ],
+        "answer": 1
+    },{
+        "id": 8,
+        "question": "What is the best case runtime complexity of Quick and Merge sort?",
+        "options": ["O(n)", "O(n^2)",
+            "O(nlog(n))", "none of the above"
+        ],
+        "answer":2
+    },{
+
+        "id": 9,
+        "question": "The parent class in an inheritance relationship is called wha?",
+        "options": ["Subclass", "Constructor",
+            "Superclass", "none of the above"
+        ],
+        "answer": 2
+    }
+
+
+
+
+]
