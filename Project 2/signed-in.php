@@ -17,16 +17,17 @@ Welcome <?php echo $_SESSION["name"]; ?>.
 }else echo "<h1>Please login first .</h1>";
 ?>
 
-<form action="login.html" method="POST">
+<form action="quizz.html" method="POST">
 <button type="submit" name="logout">log Out</button>
 </form>
 </body>
 </html>
 <?php
+
 //log out
 
 session_start();
-unset($_SESSION["id"]);
+//unset($_SESSION["id"]);
 unset($_SESSION["username"]);
 header("Location:login.html");
 ?>
