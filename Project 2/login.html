@@ -18,7 +18,7 @@
 
   <div  class="container">
     <H2>Log In</H2>
-    <form id="loginform" >
+    <form id="loginform" action="signedin.php" method="post">
       
      
         
@@ -28,10 +28,10 @@
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" max="7" size="7" required>
         <!-- <input type="submit" name="submit"  class="signupbtn" value="Sign Up" /> -->
-        <button type="submit">Sign</button>
+        <input type="submit" name = "submit" value="Submit">
         
         <div>
-        <a href="./signup.html" onclick="signup()"> Sign In</a>
+        <a href="./signup.html" onclick="signup()"> Sign Up</a>
         </div>
     </form>
     
