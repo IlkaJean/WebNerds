@@ -63,7 +63,7 @@
   </div>
   
   <div class="home1">
-    <a href="./home.html"><strong>Go Back</strong></a>
+    <a href="./home.php"><strong>Go Back</strong></a>
 
 </div>
 
