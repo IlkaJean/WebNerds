@@ -12,26 +12,25 @@
 
 <body>
  
-
     <h3><strong>Welcome to,</strong></h3>
     <h1 id="byte"> ByteTyme</h1>
 
   <div  class="container">
     <H2>Sign Up</H2>
-    <form id="loginform" >
+    <form id="loginform" action="registered.php" method="post">
       
      
         <label for="name"><b>Name</b></label>
-        <input type="text" placeholder= "Enter Name" name="username" max="16" required>
+        <input type="text" placeholder= "Enter Name" name="name" minlength=4 maxlenght="16" required>
 
         <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" max="16" required>
+        <input type="text" placeholder="Enter Username" name="username" minlength= 4 maxlength="16" required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" max="7" size="7" required>
+        <input type="password" placeholder="Enter Password" name="psw" maxlength="16" size="7" required>
 
         <label for="cpsw"><b>Password</b></label>
-        <input type="password" placeholder="Confirm Password" name="cpsw" max="7" size="7" required>
+        <input type="password" placeholder="Confirm Password" name="cpsw" maxlength="16" size="7" required>
         <!-- <input type="submit" name="submit"  class="signupbtn" value="Sign Up" /> -->
         <button type="submit">Sign Up</button>
         
