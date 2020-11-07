@@ -1,36 +1,54 @@
+<?php  session_start(); ?>
+
 <?php
-// Starting session
-session_start();
-?>
-<html>
 
-<head>
-  <title>User Login</title>
-  <link rel="stylesheet" href="./signin-signup.css">
-</head>
+if(isset($_SESSION['usename']))   // Checking whether the session is already there or not if 
+                              // true then header redirect it to the home page directly 
+ {
+    header("Location:home.php"); 
+ }
+else
+{
+    include 'login.html';
+}
 
-<body>
+if(isset($_POST['submit']))   // it checks whether the user clicked login button or not 
+{
+     $user = $_POST['username'];
+     $pass = $_POST['psw'];
 
-  <?php
-  if ($_SESSION["username"]) {
+    if(isset($_POST["username"]) && isset($_POST["psw"])){
+    $file = fopen('visitors.txt', 'r');
+    $good=false;
+    while(!feof($file)){
+        $line = fgets($file);
+        $array = explode(",",$line);
+       print_r ($array);
+       echo $user ;
+       echo $pass;
+    if(trim($array[1]) == $_POST['username'] && trim($array[2]) == $_POST['psw']){
+            $good=true;
+            break;
+        }
+    }
 
-  ?>
-    <a href="./home.html" onclick="signup()"> Sign In</a>
-    Welcome <?php echo $_SESSION["name"]; ?>.
-  <?php
-  } else echo "<h1>Go to home</h1>";
-  ?>
+    if($good){
+    $_SESSION['usename'] = $user;
+        //echo '<script type="text/javascript"> window.open("home.php","_self");</script>';  
+        header("Location:home.php"); 
+    }else{
+        echo "invalid UserName or Password";
+    }
+    fclose($file);
+    }
+    else{
+        include 'login.html';
+    }
 
-  <form action="home.html" method="POST">
-    <button type="submit" name="logout">Home</button>
-  </form>
-</body>
+}
 
-</html>
-<?php
-//log out
-session_destroy();
-// unset($_SESSION["id"]);
-// unset($_SESSION["username"]);
-// header("Location:login.html");
+
+
+
+
 ?>
