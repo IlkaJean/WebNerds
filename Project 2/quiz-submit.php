@@ -28,7 +28,8 @@
                 $score = $score +1;
             }
         }
-        echo " score =". $score;
+        echo " Your score =". $score;
+        echo "<br>"."<a href='home.php'>Return to home page.</a>";
     ?>
 
         <?php
