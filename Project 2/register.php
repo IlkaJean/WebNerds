@@ -6,7 +6,7 @@
 
   <title>ByteTyme</title>
 
-  <link href="signin-signup.css" type="text/css" rel="stylesheet" />
+  <link href="./signin-signup.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -43,31 +43,31 @@
 
   // to check that user is not creating second account
 
-  $file = file_get_contents("visitors.txt");
+//   $file = file_get_contents("visitors.txt");
 
-  $line = explode("\n", $file);
+//   $line = explode("\n", $file);
 
-  $usern = $_POST["name"];
+//   $usern = $_POST["name"];
 
-  foreach ($line as $j) {
+//   foreach ($line as $j) {
 
-    $j = trim($j);
+//     $j = trim($j);
 
-    //echo $j;
+//     //echo $j;
 
-    $l = explode(",", $j);
+//     $l = explode(",", $j);
 
-    foreach ($l as $k) {
+//     foreach ($l as $k) {
 
-      $k = trim($k);
+//       $k = trim($k);
 
-      if ((strstr($k, $usern)) == true) {
-        $errorMessage[] = "Name is already in the database.";
+//       if ((strstr($k, $usern)) == true) {
+//         $errorMessage[] = "Name is already in the database.";
       
-      }
-    }
+//       }
+//     }
    
-  }
+//   }
 
   //fclose($file);
 
@@ -95,11 +95,13 @@
 
   if (empty($errorMessage)) {
 
-    $file = file_get_contents("visitors.txt");
+  
 
-    $file .= $_POST["name"] . "," . $_POST["username"] . "," . $_POST["psw"] . "," . $_POST["cpsw"] . "<br>";
-
-    file_put_contents("visitors.txt", $file, FILE_APPEND | LOCK_EX);
+    $myfile = fopen("visitors.txt", "a+") or die("Unable to open file!");
+    $txt = $_POST["name"] . "," . $_POST["username"] . "," . $_POST["psw"] . "," . $_POST["cpsw"] ."\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+    //echo file_get_contents("visitors.txt");
 
   ?>
 
