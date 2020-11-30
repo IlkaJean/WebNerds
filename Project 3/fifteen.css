@@ -1,0 +1,36 @@
+body {
+    background-color: white;
+    text-align: center;
+}
+
+.ar {
+    width: 400px;
+}
+
+#suffle {
+    margin-top: 40px;
+}
+
+#action {
+    padding-top: 10px;
+}
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#puzzles {
+    height: 400px;
+    position: relative;
+    font-size: 40px;
+}
+
+.item {
+    position: absolute;
+    border: 2px solid black;
+    height: 96px;
+    line-height: 96px;
+    vertical-align: middle;
+    width: 96px;
+}
