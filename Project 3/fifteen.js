@@ -2,8 +2,13 @@ var moves = 0;
 var table, rows, columns, textMoves, arrayForBoard; 
 
 
+
+//change the theme
+
 function checkAnswer(){
   var ans = prompt("Choose background image: Among Us, Fortnite, Minecraft, Mario");
+
+  //change the background image to user's selected image
   if(ans =='Among Us'){
     document.getElementById('puzzle').style.backgroundImage="url(./amongus.png)";
   }
@@ -19,26 +24,10 @@ function checkAnswer(){
 
 }
 
-
-
-// var sec = 0;
-// function timer ( val ) { 
  
-//     //break;
-  
-//   return  val > 9 ? val : "0" + val ; } 
-  
-//   setInterval( function(){
-    
-//     document.getElementById("seconds").innerHTML=timer(++sec%60);
-//     document.getElementById("minutes").innerHTML=timer(parseInt(sec/60,10));
-   
-// }, 1000);
 
 
-
-
-
+//start new game
 function start()
 {
   var button = document.getElementById("scramble");
@@ -57,10 +46,12 @@ function start()
   
 }
 
-
+//star the timer when web loads
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = 0;
 var hour, minute, seconds;
+
+//display the timer
 function countTimer() {
            ++totalSeconds;
            hour = Math.floor(totalSeconds /3600);
@@ -82,6 +73,8 @@ function countTimer() {
         }
 
 
+
+//reset the game and start new game
 function startNewGame()
 {
   var bg = document.body.style.backgroundColor = "#0ec0c0";
@@ -145,7 +138,7 @@ function startNewGame()
 
 
 
-
+//display the tiles
     
 function Table()
 {
@@ -169,6 +162,8 @@ function Table()
   
   table.innerHTML = outputString;
 }
+
+//check if image is moveable 
 
 function moveThisTile( rowIndex, rowColumn)
 {
@@ -203,6 +198,7 @@ function moveThisTile( rowIndex, rowColumn)
   }
 }
 
+//move a piece the direction user selected
 function moveablePiece(rdirec, cdirec, direction)
 {
   // The following variables an if else statements
@@ -242,6 +238,7 @@ function moveablePiece(rdirec, cdirec, direction)
   return false; 
 }
 
+//check if user win the game
 function winsGame()
 {
   var counter = 1;
@@ -263,6 +260,7 @@ function winsGame()
   return true;
 }
 
+//add move to moving counter
 function incrementMoves()
 {
   moves++;
