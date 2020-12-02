@@ -54,6 +54,22 @@
         </table>
         <div id="controls">
             <input type="button" id="scramble" value="Shuffle">
+                        <div>
+              <audio src="audio.mp3" id="audio" >Your Browser Does not 
+                support audio element</audio>
+                <p>Music</p>
+                <button onclick="play()" type="button">Play</button>
+                <button onclick="pause()" type="button">Pause</button>
+            </div>
+              <script>
+                var myMusic = document.getElementById("audio");
+                function play(){
+                  myMusic.play()
+                }
+                function pause(){
+                  myMusic.pause()
+                }
+              </script>
         </div>
         <!-- <input type="button" id="newGame" value="Shuffle"> -->
              <br>
