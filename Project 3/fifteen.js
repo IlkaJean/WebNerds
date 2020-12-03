@@ -1,14 +1,9 @@
 var moves = 0; 
-var table, rows, columns, textMoves, arrayForBoard; 
+var table, rows, columns, textMoves, array; 
 
-
-
-//change the theme
-
+//function to prompt user to select preferred background
 function checkAnswer(){
   var ans = prompt("Choose background image: Among Us, Fortnite, Minecraft, Mario");
-
-  //change the background image to user's selected image
   if(ans =='Among Us'){
     document.getElementById('puzzle').style.backgroundImage="url(./amongus.png)";
   }
@@ -24,34 +19,23 @@ function checkAnswer(){
 
 }
 
- 
 
-
-//start new game
-function start()
-{
+window.onload = function(){
   var button = document.getElementById("scramble");
-  button.addEventListener( "click", startNewGame, false );
+  button.addEventListener( "click", shuffleGame, false );
   button.addEventListener( "click", countTimer, false);
-  // button.addEventListener( "click", bg, false );
   textMoves = document.getElementById("moves");
   table = document.getElementById("puzzle");
 
-  startNewGame();
-  // window.clearInterval(countTimer, 1000);
- 
-  
+
+  shuffleGame();
   countTimer();
-  
-  
 }
 
-//star the timer when web loads
-var timerVar = setInterval(countTimer, 1000);
+//timer that counts duration of game, ends when game is won
+var timer = setInterval(countTimer, 1000);
 var totalSeconds = 0;
 var hour, minute, seconds;
-
-//display the timer
 function countTimer() {
            ++totalSeconds;
            hour = Math.floor(totalSeconds /3600);
@@ -70,14 +54,12 @@ function countTimer() {
             totalSeconds = 0;
             document.getElementById("timer").innerHTML = "0" + ":" + "0" + ":" + "0";
          });
-        }
+ }
 
-
-
-//reset the game and start new game
-function startNewGame()
+//creating puzzle, based on user input
+function shuffleGame()
 {
-  var bg = document.body.style.backgroundColor = "#0ec0c0";
+  
   var puzzlePieces = new Array();
   var hasbeenUsed;
   var randomNumber = 0;
@@ -86,123 +68,91 @@ function startNewGame()
   rows = document.getElementById("rows").value;
   columns = document.getElementById("columns").value;
   textMoves.innerHTML = moves;
-  // Create the proper board size.
-  arrayForBoard = new Array(rows);
+  
+  array = new Array(rows);
   
   for (var i = 0; i < rows; i++)
   {
-    arrayForBoard[i] = new Array(columns);
+    array[i] = new Array(columns);
   }
-  // Set up a temporary array for
-  // allocating unique numbers.
+ 
   hasbeenUsed = new Array( rows * columns );
   for (var i = 0; i < rows * columns; i++)
   {
     hasbeenUsed[i] = 0;
   }
- 
   // Assign random numbers to the board.
   for (var i = 0; i < rows * columns; i++)
   {
     randomNumber = Math.floor(Math.random()*rows * columns);
-    // If our random numer is unique, add it to the board.
+    // check if each rand number that is being generated is unique
     if (hasbeenUsed[randomNumber] == 0) 
     {
       hasbeenUsed[randomNumber] = 1;
       puzzlePieces.push(randomNumber);
- 
     }
-    else // Our number is not unique. Try again.
+    else 
     {
       i--;
-    }
-    
+    } 
   }
-  
   // Assign numbers to the game board.
   counter = 0;
   for (var i = 0; i < rows; i++)
   {
     for (var j = 0; j < columns; j++)
     {
-      arrayForBoard[i][j] = puzzlePieces[counter];
+      array[i][j] = puzzlePieces[counter];
       
       counter++;
     }
   }
- 
   Table();
-
 }
 
 
 
-
-//display the tiles
     
 function Table()
 {
-  var outputString = "";
+  var content = "";
   for (var i = 0; i < rows; i++)
   {
-    outputString += "<tr>";
+    content += "<tr>";
     for (var j = 0; j < columns; j++)
     {
-      if (arrayForBoard[i][j] == 0)
+      if (array[i][j] == 0)
       {
-	outputString += "<td class=\"emptyTile\"> </td>";
+	      content += "<td class=\"emptyTile\"></td>";
       }
-      else
-      {
-	outputString += "<td class=\"tile\" onclick=\"moveThisTile(" + i + ", " + j + ")\">" + arrayForBoard[i][j] + "</td>";
+      else{
+	      content += "<td class=\"tile\" onclick=\"moveThisTile(" + i + ", " + j + ")\">" + array[i][j] + "</td>";
       }
-    } // end for (var j = 0; j < columns; j++)
-    outputString += "</tr>";
-  } // end for (var i = 0; i < rows; i++)
-  
-  table.innerHTML = outputString;
+    } 
+        content += "</tr>";
+  } 
+  table.innerHTML = content;
 }
 
-//check if image is moveable 
-
-function moveThisTile( rowIndex, rowColumn)
+//count move funciton
+function Moves()
 {
-  if (moveablePiece(rowIndex, rowColumn, "up") || moveablePiece(rowIndex, rowColumn, "down") || moveablePiece(rowIndex, rowColumn, "left") ||
-      moveablePiece(rowIndex, rowColumn, "right") )
+  moves++;
+  if (textMoves) 
   {
-    incrementMoves();
-  }
-  
- 
-  if (winsGame())
-  {
-
-    // setInterval(bg, 1000);
-    // function bg(){
-    document.body.style.backgroundImage = "url(./mario.png)";
-  // }
-    alert("Congratulations! You solved the puzzle in " + moves + " moves." + hour + ":" + minute + ":" + seconds);
-    var v = document.body.style.backgroundColor = "#0ec0c0";
-//  setInterval(bg, 1000);
-//  function bg(){
-//   document.body.style.backgroundImage = "url(./mario.png)";
-// }
-//clearInterval(timerVar);
-
-  
-    //clearInterval(timerVar);
-    // document.write(v);
-    // location.reload; 
-    startNewGame(); 
-    
+    textMoves.innerHTML = moves;
   }
 }
 
-//move a piece the direction user selected
+//changes background when user wins game
+function bg(){
+  document.getElementById("body").style.backgroundImage = "url(./Winner.png)";
+  
+}
+
+
 function moveablePiece(rdirec, cdirec, direction)
 {
-  // The following variables an if else statements
-  // make the function work for all directions.
   r = 0;
   c = 0;
   if (direction == "up")
@@ -222,23 +172,22 @@ function moveablePiece(rdirec, cdirec, direction)
     c = 1;
   }  
   
-  // Check if the tile can be moved to the spot.
-  // If it can, move it and return true.
-  if (rdirec + r >= 0 && cdirec + c >= 0 && rdirec + r < rows && cdirec + c < columns
+  // return true if puzzle on board can be move to empty space. return true if it can, else false
+  if ( cdirec + c >= 0  && rdirec + r >= 0  && rdirec + r < rows && cdirec + c < columns
   )
     {
-      if ( arrayForBoard[rdirec + r][cdirec + c] == 0)
+      if ( array[rdirec + r][cdirec + c] == 0)
       {
-        arrayForBoard[rdirec + r][cdirec + c] = arrayForBoard[rdirec][cdirec];
-        arrayForBoard[rdirec][cdirec] = 0;
-        Table();
+        array[rdirec + r][cdirec + c] = array[rdirec][cdirec];
+        array[rdirec][cdirec] = 0;
+        document.getElementsByClassName("tile").onmouseover = function() {mouseOver()};
+       Table();
       return true;
       }
   }
   return false; 
 }
 
-//check if user win the game
 function winsGame()
 {
   var counter = 1;
@@ -246,9 +195,9 @@ function winsGame()
   {
     for (var j = 0; j < columns; j++)
     {
-      if (!(arrayForBoard[i][j] == counter))
+      if (!(array[i][j] == counter))
       {
-	if ( !(counter === rows * columns && arrayForBoard[i][j] === 0 ))
+	if ( !(counter == rows * columns && array[i][j] == 0 ))
 	{
 	  return false;
 	}
@@ -256,18 +205,32 @@ function winsGame()
       counter++;
     }
   }
- 
   return true;
 }
 
-//add move to moving counter
-function incrementMoves()
+function mouseOver() {
+  document.getElementById("demo").style.border = "red";
+}
+// document.getElementsByClassName("tile").onmouseover = function() {mouseOver()};
+
+function moveThisTile( row, column)
 {
-  moves++;
-  if (textMoves) // This is nessessary.
+  if (moveablePiece(row, column, "up") || moveablePiece(row, column, "down") || moveablePiece(row, column, "left") ||
+      moveablePiece(row, column, "right") )
+     
+Moves();
+
+
+  if (winsGame())
   {
-    textMoves.innerHTML = moves;
-  }
+    alert("Congratulations! You solved the puzzle in " + moves + " moves. In " + hour + ":" + minute + ":" + seconds);
+    
+   bg(); //function to call winner image
+ 
+  setTimeout(function(){location.reload()}, 3000); //switch image after few sec
+  shuffleGame();   
+  } 
 }
 
-window.addEventListener( "load", start, false ); // This event listener makes the function start() execute when the window opens. 
+
+
