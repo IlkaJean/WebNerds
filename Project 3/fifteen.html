@@ -7,7 +7,7 @@
         
     </head>
 
-    <body>
+    <body id='body'>
         <div id = "banner">
             Fifteen Puzzle Game
         </div>
@@ -26,7 +26,7 @@
     is a sliding puzzle that consists of a frame of numbered square tiles in random order with one tile 
     missing. The game is by default in 4X4 grids, but other sizes can be selected.
     The goal of the puzzle is to place tiles in order by making sliding moves that use the empty space. Once 
-    the puzzle is solved, you will get an alert and the page will change color.
+    the puzzle is solved, you will get an alert and an extra SURPRISE!!. When game to find out!! Happy PUZZZLING!
     
     </p>
   </div>
@@ -39,45 +39,39 @@
         <p id="movetracker">Number Of Moves: <span id="moves">0</span></p>
 
         <div id="timer"></div>
-<!-- <div id ="stop_timer" onclick="clearInterval(timerVar)">Stop time</div> -->
-        <!-- <p id="time">Timer <span id="minutes"></span>:<span id="seconds"></span></p> -->
-        <!-- <span id="minutes"></span>:<span id="seconds"></span> -->
+
         <button onclick="checkAnswer()">Theme</button>
         
         <table id="puzzle">
-          <!-- Themes:
-              <button id="myBtn1">Fornite</button>
-              <button id="myBtn2">Among Us</button>
-              <button id="myBtn3">Mario</button>
-              <button id="myBtn4">MineCraft</button> -->
-              
+         
+              <!-- <div class="Column" ></div> -->
         </table>
-        <div id="controls">
+        <div id="buttons">
             <input type="button" id="scramble" value="Shuffle">
-                        <div>
-              <audio src="audio.mp3" id="audio" >Your Browser Does not 
-                support audio element</audio>
-                <p>Music</p>
-                <button onclick="play()" type="button">Play</button>
-                <button onclick="pause()" type="button">Pause</button>
-            </div>
-              <script>
-                var myMusic = document.getElementById("audio");
+        </div>
+   
+        
+
+                <audio src="./audio.mp3" id="audio" >Your Browser Does not 
+                  support audio element</audio>
+                  <button onclick="play()" type="button">Music Player</button>
+                  <button onclick="pause()" type="button">Pause Music</button>
+              </div>
+
+            
+
+            <!-- script for about modal -->
+            <script>
+var myMusic = document.getElementById("audio");
+                
                 function play(){
+          
                   myMusic.play()
                 }
                 function pause(){
                   myMusic.pause()
                 }
-              </script>
-        </div>
-        <!-- <input type="button" id="newGame" value="Shuffle"> -->
-             <br>
-            <br>
-           
 
-            <!-- script for about modal -->
-            <script>
     var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -102,9 +96,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-
-
-
             </script>
+
+
     </body>
+
 </html>
