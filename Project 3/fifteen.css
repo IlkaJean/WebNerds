@@ -8,15 +8,18 @@ html, body {
       margin-left: auto;
       margin-right: auto;
       padding: 10px;
+      
+    
+      /* background-color:  #003333; */
       border: 20px solid rgb(231, 61, 9);
       border-radius: 14px;
-     background-color: sienna; 
+     background-color: sienna 
  }
 
  
 
- #controls{text-align: center;}
-#controls input, button {
+ #buttons{text-align: center;}
+#buttons input, button {
 	cursor: pointer;
 	outline: none;	
 	padding: 20px 30px;
@@ -30,7 +33,7 @@ html, body {
 	text-shadow: -1px -1px 0 rgba(0,0,0, 0.5);
 	color: #fff;
 }
-#controls input:hover{background: #2b0cdd;}
+#buttons input:hover{background: #2b0cdd;}
 button:hover{background: #2b0cdd;}
  
 
@@ -54,8 +57,12 @@ button:hover{background: #2b0cdd;}
       -webkit-transition: 0.15s left, 0.15s top;
  	transition: 0.15s left, 0.15s top;
    background: transparent;
-  text-shadow: -2px -2px 0 rgba(236, 10, 10, 0.5);
-   color: green;
+  /* text-shadow: -2px -2px 0 rgba(236, 10, 10, 0.5); */
+  /* background: rgb(34, 13, 1); */
+   color: purple;
+   font-weight: 900 ;
+   text-shadow: 5px 5px 0 black, 
+   2px 2px 0 rgba(236, 10, 10, 0.5)
      }
      
      .emptyTile {
